@@ -30,6 +30,8 @@ void setup()
 
   //draw stuff
   mapPoints();
+  
+  saveFrame("screen-####.jpg");
 }
 
 void draw()
