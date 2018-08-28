@@ -1,11 +1,19 @@
-//Jack Bowen. 2013. Do whatever you want.
+// This program maps the Stop and Frisk data stored in the
+// data directory of this program. Once it creates and saves
+// an image to that same folder, it automatically exits. 
 
-//This image serves as the 
+// Change this to any year with a corresponding csv file. At
+// the time of writing this, this includes 2003-2016. Make
+// sure to follow the yyyy year format.
+String year = "2015";
+
+//This image serves as the background
 PImage mapBackground;
 
 ArrayList<Stop> data = new ArrayList<Stop>();
 
-//The opacity of the points is set so low to better visualize the density of stops in certain areas.
+// The opacity of the points is set so low to better
+// visualize the density of stops in certain areas.
 float alpha = 13;
 
 int asianPacIslander; //blue
@@ -19,19 +27,21 @@ int other; //white
 
 void setup()
 {
-  //The size is set to the same as the background map. It has a little room to crop it to an A2 at 300 dpi.
+  // The size is set to the same as the background map.
+  // It has a little room to crop it to an A2 at 300 dpi.
   size(7020, 4950); 
   mapBackground = loadImage("BigMap.jpg");
   image(mapBackground, 0, 0);
   noStroke();
 
-  //load the csv into an ArrayList 
+  // Load the csv into an ArrayList 
   loadData();
 
-  //draw stuff
+  // Draw a dot for each stop
   mapPoints();
   
-  saveFrame("screen-####.jpg");
+  // Save file and exit the program
+  saveFile();
 }
 
 void draw()
@@ -40,7 +50,7 @@ void draw()
 
 void loadData()
 {
-  String[] lines = loadStrings("TrimmedData.csv");
+  String[] lines = loadStrings(year + ".csv");
   for (String line : lines) {
     String[] pieces = split(line, ',');
     int sex = int(pieces[0]); 
@@ -61,46 +71,46 @@ void mapPoints()
   float no = 0;
   for (int i = 0; i < data.size(); i++)
   {
-    println(i);
+    //println(i);
 
     Stop temp = data.get(i);
 
     switch(temp.race)
     {
       //asian/pacific islander
-    case 'A':
-      fill(0, 0, 255, alpha);
-      break;
+      case 'A':
+        fill(0, 0, 255, alpha);
+        break;
 
       //black
-    case 'B':
-      fill(255, 0, 0, alpha);
-      break;
+      case 'B':
+        fill(255, 0, 0, alpha);
+        break;
 
       //american indian/alaskan
-    case 'I':
-      fill(255, 255, 0, alpha);
-      break;
+      case 'I':
+        fill(255, 255, 0, alpha);
+        break;
 
       //black hispanic
-    case 'P':
-      fill(0, 255, 0, alpha);
-      break;  
+      case 'P':
+        fill(0, 255, 0, alpha);
+        break;  
 
       //white hispanic
-    case 'Q':
-      fill(0, 255, 255, alpha);
-      break;
+      case 'Q':
+        fill(0, 255, 255, alpha);
+        break;
 
       //white
-    case 'W':
-      fill(255, 0, 255, alpha);
-      break;
+      case 'W':
+        fill(255, 0, 255, alpha);
+        break;
 
       //other
-    case 'Z':
-      fill(0, alpha);
-      break;
+      case 'Z':
+        fill(0, alpha);
+        break;
     }
 
     //adjust the lat and lon to align with the background map dimensions
@@ -112,9 +122,7 @@ void mapPoints()
   println("done");
 }
 
-void keyPressed() {
-  if (keyCode == ENTER) {
-    saveFrame("screen-####.jpg");
-  }
+void saveFile() {
+  saveFrame(year + ".jpg");
+  exit();
 }
-
