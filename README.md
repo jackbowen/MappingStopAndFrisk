@@ -2,7 +2,7 @@
 
 A data visualization of every stop made under NYC's stop-and-frisk program from 2003-2016.
 
-TODO: add gallery image here
+![alt text](https://raw.githubusercontent.com/jackbowen/MappingStopAndFrisk/master/Documentation/exhibit.jpg)
 
 ## About Stop+Frisk
 
