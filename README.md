@@ -26,7 +26,7 @@ Processing 3.0
 
 ### Software Instructions
 
-1. First you'll need to download all the relevant data. Navigate to the downloaded folder and:
+1. First you'll need to download all the relevant data. Navigate to the base folder and:
 ```
 ./downloadData.sh
 ```
