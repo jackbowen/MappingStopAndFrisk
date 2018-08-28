@@ -17,24 +17,24 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
  
- '''
- wget
- Python 3.0
- stateplane - a module for python. "pip3 install --user stateplane" if you have pip3
- Processing 3.0
- '''
+```
+wget
+Python 3.0
+stateplane - a module for python. "pip3 install --user stateplane" if you have pip3
+Processing 3.0
+```
 
 ### Software Instructions
 
 1. First you'll need to download all the relevant data. Navigate to the downloaded folder and:
-'''
+```
 ./downloadData.sh
-'''
+```
 
 2. The download shell script you just ran will create a folder called "RawData" that will store a CSV file for each year of the program so far. Each of these files is going to be pretty big so we want to strip out everything we don't need, convert the location of the stop into GPS coordinates we can plot, and store our slimmed down CSVs in a directory our Processing sketch will be able to access.
-'''
+```
 python3 formatDataCSV.py
-'''
+```
 
 3. From the current directory, navigate to the Map folder and open up the Processing sketch titled Map.pde. Open up Processing's preferences and click the box that says "Increase maximum available memory to: " and set it to 2048MB. This is necessary because of how large the input files are (both the csv and canvas you are drawing on). This program can only create one visualization at a time so change the variable called year at the top of the file to whatever year you want. 
 
