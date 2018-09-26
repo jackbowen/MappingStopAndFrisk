@@ -38,14 +38,14 @@ python3 formatDataCSV.py
 
 3. From the current directory, navigate to the Map folder and open up the Processing sketch titled Map.pde. Open up Processing's preferences and click the box that says "Increase maximum available memory to: " and set it to 2048MB. This is necessary because of how large the input files are (both the csv and canvas you are drawing on). This program can only create one visualization at a time so change the variable called year at the top of the file to whatever year you want. 
 
-### Observations
+## Observations
 
 We can begin in Manhattan by looking at Central Park, the rectangular void in the middle of the island. The predominantly white neighborhoods that lie east and west of the park show noticeably less activity than the neighborhoods to the north of them despite having roughly the same population density. North of the park lies Harlem, a historically black neighborhood, where we can see a much higher concentration of stops. Northwest of Harlem is Washington Heights with its mostly black-Hispanic population. Again, we see a disproportionate number of stops. In Queens we see a cluster of stops that occur in the majority Hispanic neighborhoods of Jackson Heights and Elmhurst. South of Broadway in Brooklyn shows an alarming number of stops despite being much less populated than most of Manhattan. 
 
 These maps were originally made in 2012 near the height of this practice. The number of stops peaked in 2011 with 685,724 stops.[2] Since then, the number of stops has gone down each year due to public outcry and a 2013 ruling by a U.S. District Court judge saying that the practice, but not the law behind it, was unconstitutional.[3] These maps were made with data published by the NYPD [here](http://www1.nyc.gov/site/nypd/stats/reports-analysis/stopfrisk.page) and the data was interpreted via a codebook published by the New York Civil Liberties 
 Union [here](https://www.nyclu.org/en/stop-and-frisk-data). 
 
-### References
+## References
 
 1. https://en.wikipedia.org/wiki/Stop-and-frisk_in_New_York_City
 2. https://www.nyclu.org/en/stop-and-frisk-data
