@@ -29,20 +29,28 @@ for rawFileName in os.listdir(rawPath):
    for i in range(0, len(columns)):
       if columns[i] == "sex":
          sexColumn = i
+         print("sexColumn: " + str(sexColumn))
       if columns[i] == "age":
          ageColumn = i
+         print("ageColumn: " + str(ageColumn))
       if columns[i] == "datestop":
          dateColumn = i
+         print("dateColumn: " + str(dateColumn))
       if columns[i] == "race":
          raceColumn = i
+         print("raceColumn: " + str(raceColumn))
       if columns[i] == "arstmade":
          arstColumn = i
+         print("arstColumn: " + str(arstColumn))
       if columns[i] == "ycoord":
          latColumn = i
+         print("latColumn: " + str(latColumn))
       if columns[i] == "xcoord":
          lonColumn = i
+         print("lonColumn: " + str(lonColumn))
 
    trimmedFile = open(trimmedPath + "/" + rawFileName, 'w')
+
    lines = rawFile.readlines()
    for line in lines:
       columns = line.split(",");
@@ -59,6 +67,7 @@ for rawFileName in os.listdir(rawPath):
          lat = float(latString) * .3048
          lon = float(lonString) * .3048
          latlon = stateplane.to_latlon(lon, lat, epsg="32118")
+         print("Adding " + sex+","+age+","+date+","+race+","+arst+","+str(latlon[0])+","+str(latlon[1]))
          trimmedFile.write(sex+","+age+","+date+","+race+","+arst+","+str(latlon[0])+","+str(latlon[1])+"\n")
    trimmedFile.close()
    rawFile.close()
